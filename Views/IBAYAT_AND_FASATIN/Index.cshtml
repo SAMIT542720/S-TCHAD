@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "قائمة العبايات الفساتين";
 }
+<h3 class="float-end font-wight-bold mr-0">عبايات وفساتين</h3>
 <div class="row" style=" height: 630px; width:1500px">
     @foreach (var item in Model)
     {
@@ -54,13 +55,10 @@
                         <div class="card-body">
                             <p class="card-text">@item.Description</p>
                             <p class="card-text"><b>@item.Sex</b></p>
-                            <p class="btn btn-outline-primary" @*asp-action="Details" asp-route-id="@item.ID"*@>
+                            <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.ID">
                                 <i class="bi bi-eye"></i>عرض التفاصيل
-                            </p>
-                            <p class="card-text"><b>للطلب عن طريق </b></p>
-                            <a class="btn btn-success text-white ">
-                                WhatsApp<i class="bi bi-whatsapp"></i>
                             </a>
+                            <p class="card-text"><h5>للطلب   </h5></p>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -68,6 +66,9 @@
                             <p class="card-text">
                                 <a class="btn btn-primary text-white float-right">
                                     <i class="bi bi-messenger"></i>Messenger
+                                </a>
+                                <a class="btn btn-success text-white ">
+                                    WhatsApp<i class="bi bi-whatsapp"></i>
                                 </a>
                                 <a class="btn btn-primary text-white">
                                     <i class="bi bi-telephone-fill"></i>66 65 05 39

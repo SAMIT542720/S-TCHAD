@@ -11,12 +11,18 @@ namespace S_TCHAD.Controllers
         {
             _service = service;
         }
-
+        //list of all products
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync();
             return View(data);
         }
-
+        //details of the product
+        public async Task<IActionResult> Details(int id)
+        {
+            var actordetails = await _service.GetByIdAsync(id);
+            if (actordetails == null) { return View("Not Found"); }
+            return View(actordetails);
+        }
     }
 }
