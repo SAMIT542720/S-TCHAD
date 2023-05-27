@@ -17,6 +17,9 @@ builder.Services.AddScoped<IBeautyProductService, BeautyProductService>();
 builder.Services.AddScoped<IGiftsService, GiftsService>();
 builder.Services.AddScoped<IHairCreamService, HairCreamService>();
 builder.Services.AddScoped<IHomeAccessoriesService, HomeAccessoriesService>();
+builder.Services.AddScoped<ITIRAHSERVICE, TIRAHSERVICE>();
+builder.Services.AddScoped<IUnderWearService, UnderWearService>();
+builder.Services.AddScoped<IWomenShooeseService, WomenShooeseService>();
 //Authentication and Authorization
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddMemoryCache();

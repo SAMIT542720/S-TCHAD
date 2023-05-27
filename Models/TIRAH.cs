@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using S_TCHAD.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace S_TCHAD.Models
 {
-    public class TIRAH
+    public class TIRAH:IEntityBase
     {
         [Key]
         public int ID { get; set; }
