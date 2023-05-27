@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using S_TCHAD.Controllers;
 using S_TCHAD.Data;
 using S_TCHAD.Data.Service;
 using S_TCHAD.Models;
@@ -12,6 +13,10 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 builder.Services.AddScoped<IIBAYATSERVICE, IBAYATSERVICE>();
 builder.Services.AddScoped<IACCESSORIESERVICE,ACCESSORIESERVICE>();
 builder.Services.AddScoped<IBacksservice, Backsservice>();
+builder.Services.AddScoped<IBeautyProductService, BeautyProductService>();
+builder.Services.AddScoped<IGiftsService, GiftsService>();
+builder.Services.AddScoped<IHairCreamService, HairCreamService>();
+builder.Services.AddScoped<IHomeAccessoriesService, HomeAccessoriesService>();
 //Authentication and Authorization
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddMemoryCache();

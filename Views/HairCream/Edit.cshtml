@@ -1,0 +1,101 @@
+﻿@model HairCream
+@{
+    ViewData["Title"] = "تحديث معلومات المنتج";
+}
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h4>تحديث معلومات المنتج</h4>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-labe"> اسم المنتج</label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PhotoURL1" class="control-labe">رابط الصورة 1</label>
+                                <input asp-for="PhotoURL1" class="form-control" />
+                                <span asp-validation-for="PhotoURL1" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PhotoURL2" class="control-labe">رابط الصورة 2</label>
+                                <input asp-for="PhotoURL2" class="form-control" />
+                                <span asp-validation-for="PhotoURL2" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PhotoURL3" class="control-labe">رابط الصورة 3</label>
+                                <input asp-for="PhotoURL3" class="form-control" />
+                                <span asp-validation-for="PhotoURL3" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Sex" class="control-labe">الجنس</label>
+                                <input asp-for="Sex" class="form-control" />
+                                <span asp-validation-for="Sex" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-4 offset-4 text-center">
+                                <img width="100%" id="ImageURLPreview1" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label asp-for="Description" class="control-labe"></label>
+                                <textarea asp-for="Description" class="form-control"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 offset-4 text-center">
+                        <img width="100%" id="ImageURLPreview2" />
+                    </div>
+                    <div class="col-md-4 offset-4 text-center">
+                        <img width="100%" id="ImageURLPreview3" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="تحديث" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">الرجوع الي القائمة<i class="bi bi-box-arrow-left"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('ImageURLPreview1')
+            output.src = $("#PhotoURL1").val();
+        })
+        $("#PhotoURL1").on("change", function () {
+            var output = document.getElementById('ImageURLPreview1')
+            output.src = $(this).val();
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('ImageURLPreview2')
+            output.src = $("#PhotoURL2").val();
+        })
+        $("#PhotoURL2").on("change", function () {
+            var output = document.getElementById('ImageURLPreview2')
+            output.src = $(this).val();
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('ImageURLPreview3')
+            output.src = $("#PhotoURL3").val();
+        })
+        $("#PhotoURL3").on("change", function () {
+            var output = document.getElementById('ImageURLPreview3')
+            output.src = $(this).val();
+        })
+    </script>
+}

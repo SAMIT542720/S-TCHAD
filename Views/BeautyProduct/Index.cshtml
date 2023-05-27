@@ -1,0 +1,94 @@
+﻿@model IEnumerable<BeautyProduct>
+
+@{
+    ViewData["Title"] = "قائمة العبايات الفساتين";
+}
+<div class="row" style=" height: 630px; width:1500px">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 col-xs-6 border-primary mb-3">
+            <div class="card mb-3 " style="max-width:540px;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-success">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @item.Name
+                                    @*@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                                {*@
+                                    <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.ID"><i class="bi bi-pencil-square"></i></a>
+                                    <br>
+                                    <a class="text-white float-right" asp-action="Delete" asp-route-id="@item.ID"><i class="bi bi-trash"></i></a>
+                                    @*}*@
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="@item.PhotoURL1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="@item.PhotoURL2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="@item.PhotoURL3">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">السابق</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">التالي</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="card-text">@item.Description</p>
+                            <p class="card-text"><b>@item.Sex</b></p>
+                            <a class="btn btn-outline-white text-white">
+                                <i class="bi bi-eye"></i>ththt
+                            </a>
+                            <a class="btn btn-outline-white text-white" >
+                                <i class="bi bi-eye"></i>hehhmnghrhh
+                            </a>
+                            <a class="btn btn-outline-white text-white" >
+                                <i class="bi bi-eye"></i>atefhmnegrnghmng
+                            </a>
+                            <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.ID">
+                                <i class="bi bi-eye"></i>عرض التفاصيل
+                            </a>
+                            <p class="card-text "><h6>للطلب</h6></p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer ">
+                            <p class="card-text">
+                                <a class="btn btn-primary text-white float-right">
+                                    <i class="bi bi-messenger"></i>Messenger
+                                </a>
+                                <a class="btn btn-success text-white ">
+                                    WhatsApp<i class="bi bi-whatsapp"></i>
+                                </a>
+                                <a class="btn btn-primary text-white" style="margin-left:30px">
+                                    <i class="bi bi-telephone-fill"></i>66 65 05 39
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@await Html.PartialAsync("_CreateItem", "BeautyProduct")
