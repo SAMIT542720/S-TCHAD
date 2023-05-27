@@ -25,7 +25,7 @@ namespace S_TCHAD.Controllers
             if (actordetails == null) { return View("Not Found"); }
             return View(actordetails);
         }
-        //create new actor.
+        //add new product.
         public IActionResult Create()
         {
             return View();
@@ -40,5 +40,24 @@ namespace S_TCHAD.Controllers
             await _service.AddAsync(abaya);
             return RedirectToAction(nameof(Index));
         }
+        //edit product
+        public async Task<IActionResult> Edit(int id)
+        {
+            var actorDetails = await _service.GetByIdAsync(id);
+            if (actorDetails == null) return View("NotFound");
+            return View(actorDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("Name, PhotoURL1,PhotoURL2,PhotoURL3,Description,Sex")] IBAYAT_AND_FASATIN abaya)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(abaya);
+            }
+            await _service.UpdateAsync(id, abaya);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
