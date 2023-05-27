@@ -58,6 +58,22 @@ namespace S_TCHAD.Controllers
             await _service.UpdateAsync(id, abaya);
             return RedirectToAction(nameof(Index));
         }
+        //delet a product
+        public async Task<IActionResult> Delete(int id)
+        {
+            var pdatails = await _service.GetByIdAsync(id);
+            if (pdatails == null) return View("NotFound");
+            return View(pdatails);
+        }
 
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var pdatails = await _service.GetByIdAsync(id);
+            if (pdatails == null) return View("NotFound");
+
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
