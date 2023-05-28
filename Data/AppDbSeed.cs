@@ -771,22 +771,22 @@ namespace S_TCHAD.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-                string adminUserEmail = "admin@stchad.com";
+                string adminUserEmail = "admin@etickets.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if (adminUser == null)
                 {
                     var newAdminUser = new AppUser()
                     {
-                        FullName = "Ali Achair Langaba",
-                        UserName = "Ali Lanagab",
+                        FullName = "Admin User",
+                        UserName = "admin-user",
                         Email = adminUserEmail,
                         EmailConfirmed = true
                     };
                     await userManager.CreateAsync(newAdminUser, "Coding@1234?");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
-                string appUserEmail = "user@stchad.com";
+                string appUserEmail = "user@etickets.com";
                 var appUser = await userManager.FindByEmailAsync(appUserEmail);
                 if (appUser == null)
                 {

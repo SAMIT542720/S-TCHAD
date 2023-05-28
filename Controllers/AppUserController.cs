@@ -45,5 +45,16 @@ namespace S_TCHAD.Controllers
             TempData["Error"] = "بيانات اعتماد خاطئة ، يرجى المحاولة مرة أخرى";
             return View(loginVM);
         }
+        //log out function
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
+        public IActionResult AccessDenied(string ReturnUrl)
+        {
+            return View();
+        }
     }
 }
