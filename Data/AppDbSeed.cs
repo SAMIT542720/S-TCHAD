@@ -756,51 +756,5 @@ namespace S_TCHAD.Data
                 }
             }
         }
-        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
-        {
-            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
-            {
-
-                //Roles
-                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-
-                if (!await roleManager.RoleExistsAsync(UserRoles.ADMIN))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.ADMIN));
-                if (!await roleManager.RoleExistsAsync(UserRoles.USER))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.USER));
-
-                //Users
-                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-                string adminUserEmail = "alilangaba@stchad.com";
-
-                var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
-                if (adminUser == null)
-                {
-                    var newAdminUser = new AppUser()
-                    {
-                        FullName = "Ali Alchair Langaba",
-                        UserName = "Ali Langaba",
-                        Email = adminUserEmail,
-                        EmailConfirmed = true
-                    };
-                    await userManager.CreateAsync(newAdminUser, "Ali123");
-                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.ADMIN);
-                }
-                string appUserEmail = "user@stchad.com";
-                var appUser = await userManager.FindByEmailAsync(appUserEmail);
-                if (appUser == null)
-                {
-                    var newAppUser = new AppUser()
-                    {
-                        FullName = "Application User",
-                        UserName = "app-user",
-                        Email = appUserEmail,
-                        EmailConfirmed = true
-                    };
-                    await userManager.CreateAsync(newAppUser, "User123");
-                    await userManager.AddToRoleAsync(newAppUser, UserRoles.USER);
-                }
-            }
-        }
     }
 }
