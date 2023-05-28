@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using S_TCHAD.Data.Service;
+using S_TCHAD.Data.VIEWMODELS;
 using S_TCHAD.Models;
 
 namespace S_TCHAD.Controllers
@@ -48,13 +49,13 @@ namespace S_TCHAD.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Name, PhotoURL1,PhotoURL2,PhotoURL3,Description,Sex")] TIRAH abaya)
+        public async Task<IActionResult> Edit(int id, NewProductVM movie)
         {
-            if (!ModelState.IsValid)
+            if (id != movie.ID)
             {
-                return View(abaya);
+                return View("Not Found");
             }
-            await _service.UpdateAsync(id, abaya);
+            await _service.UpdateProductAsync(movie);
             return RedirectToAction(nameof(Index));
         }
         //delet a product
