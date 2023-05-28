@@ -27,7 +27,7 @@ builder.Services.AddSession();
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-});
+}); 
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -53,5 +53,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 AppDbSeed.Seed(app);
-//AppDbSeed.SeedUsersAsync(app).Wait();
+AppDbSeed.SeedUsersAndRolesAsync(app).Wait();
 app.Run();

@@ -1,0 +1,41 @@
+﻿@using S_TCHAD.Data.VIEWMODELS
+@model LoginVM
+@{
+    ViewData["Titel"] = "تسجيل الدخول إلى حسابك";
+}
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p>
+            <h4>
+                تسجيل الدخول إلى حسابك
+            </h4>
+        </p>
+        @if (TempData["Error"] != null)
+        {
+            <div class="col-md-12 alert alert-danger">
+                <span><b>معذرة!</b> - @TempData["Error"]</span>
+            </div>
+        }
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Login">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="EmialAddress">عنوان البريد الإلكتروني</label>
+                        <input asp-for="EmialAddress" class="form-control" />
+                        <span asp-validation-for="EmialAddress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password">كلمة المرور</label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="تسجيل الدخول" class="btn btn-outline-success float-right" />
+                        <a class=" btn btn-outline-secondary" asp-controller="Home" asp-action="Index">إلغاء</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

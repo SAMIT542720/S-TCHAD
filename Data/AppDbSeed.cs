@@ -756,7 +756,7 @@ namespace S_TCHAD.Data
                 }
             }
         }
-        public static async Task SeedUsersAsync(IApplicationBuilder applicationBuilder)
+        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
@@ -764,10 +764,10 @@ namespace S_TCHAD.Data
                 //Roles
                 var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-                if (!await roleManager.RoleExistsAsync(UserRole.ADMIN))
-                    await roleManager.CreateAsync(new IdentityRole(UserRole.ADMIN));
-                if (!await roleManager.RoleExistsAsync(UserRole.USER))
-                    await roleManager.CreateAsync(new IdentityRole(UserRole.USER));
+                if (!await roleManager.RoleExistsAsync(UserRoles.ADMIN))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.ADMIN));
+                if (!await roleManager.RoleExistsAsync(UserRoles.USER))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.USER));
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
@@ -778,13 +778,13 @@ namespace S_TCHAD.Data
                 {
                     var newAdminUser = new AppUser()
                     {
-                        FullName = "Ali Achair Langaba",
+                        FullName = "Ali Alchair Langaba",
                         UserName = "Ali Langaba",
                         Email = adminUserEmail,
                         EmailConfirmed = true
                     };
                     await userManager.CreateAsync(newAdminUser, "Ali123");
-                    await userManager.AddToRoleAsync(newAdminUser, UserRole.ADMIN);
+                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.ADMIN);
                 }
                 string appUserEmail = "user@stchad.com";
                 var appUser = await userManager.FindByEmailAsync(appUserEmail);
@@ -798,7 +798,7 @@ namespace S_TCHAD.Data
                         EmailConfirmed = true
                     };
                     await userManager.CreateAsync(newAppUser, "User123");
-                    await userManager.AddToRoleAsync(newAppUser, UserRole.USER);
+                    await userManager.AddToRoleAsync(newAppUser, UserRoles.USER);
                 }
             }
         }
