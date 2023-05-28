@@ -14,12 +14,12 @@
                             <p class="card-text">
                                 <h5 class="card-title">
                                     @item.Name
-                                    @*@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
-                                {*@
-                                    <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.ID"><i class="bi bi-pencil-square"></i></a>
-                                    <br>
-                                    <a class="text-white float-right" asp-action="Delete" asp-route-id="@item.ID"><i class="bi bi-trash"></i></a>
-                                    @*}*@
+                                    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                                    {
+                                        <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.ID"><i class="bi bi-pencil-square"></i></a>
+                                        <br>
+                                        <a class="text-white float-right" asp-action="Delete" asp-route-id="@item.ID"><i class="bi bi-trash"></i></a>
+                                    }
                                 </h5>
                             </p>
                         </div>
@@ -59,10 +59,10 @@
                             <a class="btn btn-outline-white text-white">
                                 <i class="bi bi-eye"></i>ththt
                             </a>
-                            <a class="btn btn-outline-white text-white" >
+                            <a class="btn btn-outline-white text-white">
                                 <i class="bi bi-eye"></i>hehhmnghrhh
                             </a>
-                            <a class="btn btn-outline-white text-white" >
+                            <a class="btn btn-outline-white text-white">
                                 <i class="bi bi-eye"></i>atefhmnegrnghmng
                             </a>
                             <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.ID">
@@ -91,4 +91,7 @@
         </div>
     }
 </div>
-@await Html.PartialAsync("_CreateItem", "TIRAH")
+@if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+{
+    @await Html.PartialAsync("_CreateItem", "TIRAH")
+}

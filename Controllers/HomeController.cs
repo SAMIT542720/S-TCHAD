@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using S_TCHAD.Data.Static;
 using S_TCHAD.Models;
+using System.Data;
 using System.Diagnostics;
 
 namespace S_TCHAD.Controllers

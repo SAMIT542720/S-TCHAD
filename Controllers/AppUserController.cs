@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using S_TCHAD.Data;
+using S_TCHAD.Data.Static;
 using S_TCHAD.Data.VIEWMODELS;
 using S_TCHAD.Models;
 
@@ -52,9 +54,44 @@ namespace S_TCHAD.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+        //access denied
         public IActionResult AccessDenied(string ReturnUrl)
         {
             return View();
+        }
+        //LISTING ALL USERS
+        public async Task<IActionResult> Users()
+        {
+            var users = await _context.Users.ToListAsync();
+            return View(users);
+        }
+        //REGISTER NEW USER
+        public IActionResult Register() => View(new RegisterVM());
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterVM registerVM)
+        {
+            if (!ModelState.IsValid) return View(registerVM);
+
+            var User = await _userManager.FindByEmailAsync(registerVM.EmialAddress);
+            if (User != null)
+            {
+                TempData["Error"] = "هذا البريد الإلكتروني قيد الاستخدام بالفعل";
+                return View(registerVM);
+            }
+
+            var newUser = new AppUser()
+            {
+                FullName = registerVM.FullName,
+                Email = registerVM.EmialAddress,
+                UserName = registerVM.EmialAddress
+            };
+            var newUserResponse = await _userManager.CreateAsync(newUser, registerVM.Password);
+
+            if (newUserResponse.Succeeded)
+                await _userManager.AddToRoleAsync(newUser, UserRoles.User);
+
+            return View("RegisterCompleted");
         }
     }
 }

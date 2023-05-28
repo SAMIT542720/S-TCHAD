@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using S_TCHAD.Data.Service;
+using S_TCHAD.Data.Static;
 using S_TCHAD.Data.VIEWMODELS;
 using S_TCHAD.Models;
+using System.Data;
 
 namespace S_TCHAD.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     public class HomeAccessoriesController : Controller
     {
         private readonly IHomeAccessoriesService _service;
@@ -13,12 +17,14 @@ namespace S_TCHAD.Controllers
             _service = service;
         }
         //list of all products
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync();
             return View(data);
         }
         //details of the product
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var actordetails = await _service.GetByIdAsync(id);
