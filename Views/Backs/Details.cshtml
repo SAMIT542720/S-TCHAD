@@ -49,21 +49,23 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <p class="card-text">@Model.Description</p>
-                        <p class="card-text">@Model.Sex</p>
-                        <p class="card-text"><b> السعر:@Model.price</b></p>
-                        <p class="card-text">Francs CFA(XAF)</p>
-                        <p class="card-text">@((Model.price / 5).ToString()) ريال</p>
-                        <p class="card-text"><h3>للطلب عن طريق </h3></p>
-                        <a class="btn btn-primary text-white">
-                            <i class="bi bi-messenger"></i>Messenger
-                        </a>
-                        <a class="btn btn-success text-white ">
-                            WhatsApp<i class="bi bi-whatsapp"></i>
-                        </a>
-                        <a class="btn btn-primary text-white">
-                            <i class="bi bi-telephone-fill"></i>66 65 05 39
-                        </a>
+                        <p class="card-text text-right">@Model.Description</p>
+                        <p class="card-text text-right">@Model.Sex</p>
+                        <p class="card-text text-right"><b> السعر: @Model.price</b></p>
+                        <p class="card-text text-right">Francs CFA(XAF)</p>
+                        <p class="card-text text-right">@((Model.price / 5).ToString()) ريال</p>
+                        <div class="text-right">
+                            <p class="card-text text-right"><h3>للطلب والاستفسار  </h3></p>
+                            <a class="btn btn-primary text-white">
+                                <i class="bi bi-messenger"></i>Messenger
+                            </a>
+                            <a class="btn btn-success text-white ">
+                                WhatsApp<i class="bi bi-whatsapp"></i>
+                            </a>
+                            <a class="btn btn-primary text-white">
+                                <i class="bi bi-telephone-fill"></i>66 65 05 39
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-12">

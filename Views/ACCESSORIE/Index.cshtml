@@ -54,18 +54,20 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <p class="card-text">@item.Description</p>
-                            <p class="card-text"><b>@item.Sex</b></p>
-                            <p class="card-text"><b> السعر:@item.price</b></p>
-                            <p class="card-text">Francs CFA(XAF)</p>
-                            <p class="card-text">@((item.price / 5).ToString()) ريال</p>
+                            <p class="card-text text-right">@item.Description</p>
+                            <p class="card-text text-right"><b>@item.Sex</b></p>
+                            <p class="card-text text-right"><b> السعر: @item.price</b></p>
+                            <p class="card-text text-right">Francs CFA(XAF)</p>
+                            <p class="card-text text-right">@((item.price / 5).ToString()) ريال</p>
                             <a class="btn btn-outline-white text-white">
                                 <i class="bi bi-eye"></i>atefhmnegrnghmng
                             </a>
-                            <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.ID">
-                                <i class="bi bi-eye"></i>عرض التفاصيل
-                            </a>
-                            <p class="card-text "><h6>للطلب</h6></p>
+                            <div class="text-right">
+                                <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.ID">
+                                    <i class="bi bi-eye"></i>عرض التفاصيل
+                                </a>
+                                <p class="card-text text-right"><h6>للطلب والاستفسار</h6></p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-12">
