@@ -51,6 +51,9 @@
                     <div class="card-body">
                         <p class="card-text">@Model.Description</p>
                         <p class="card-text">@Model.Sex</p>
+                        <p class="card-text"><b> السعر:@Model.price</b></p>
+                        <p class="card-text">Francs CFA(XAF)</p>
+                        <p class="card-text">@((Model.price / 5).ToString()) ريال</p>
                         <p class="card-text"><h3>للطلب عن طريق </h3></p>
                         <a class="btn btn-primary text-white">
                             <i class="bi bi-messenger"></i>Messenger

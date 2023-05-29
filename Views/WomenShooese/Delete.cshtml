@@ -9,53 +9,59 @@
         </p>
         <div class="row">
             <div class="col-md-8 offset-2">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label asp-for="Name" class="control-labe"> اسم المنتج</label>
-                                <input asp-for="Name" class="form-control" />
-                                <span asp-validation-for="Name" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="PhotoURL1" class="control-labe">رابط الصورة 1</label>
-                                <input asp-for="PhotoURL1" class="form-control" />
-                                <span asp-validation-for="PhotoURL1" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="PhotoURL2" class="control-labe">رابط الصورة 2</label>
-                                <input asp-for="PhotoURL2" class="form-control" />
-                                <span asp-validation-for="PhotoURL2" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="PhotoURL3" class="control-labe">رابط الصورة 3</label>
-                                <input asp-for="PhotoURL3" class="form-control" />
-                                <span asp-validation-for="PhotoURL3" class="text-danger"></span>
-                            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-labe"> اسم المنتج</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label asp-for="Sex" class="control-labe">الجنس</label>
-                                <input asp-for="Sex" class="form-control" />
-                                <span asp-validation-for="Sex" class="text-danger"></span>
-                                <div class="col-md-4 offset-4 text-center">
-                                    <img width="100%" id="ImageURLPreview1" />
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label asp-for="PhotoURL1" class="control-labe">رابط الصورة 1</label>
+                            <input asp-for="PhotoURL1" class="form-control" />
+                            <span asp-validation-for="PhotoURL1" class="text-danger"></span>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label asp-for="Description" class="control-labe"></label>
-                                <textarea asp-for="Description" class="form-control"></textarea>
-                                <span asp-validation-for="Description" class="text-danger"></span>
-                            </div>
+                        <div class="form-group">
+                            <label asp-for="PhotoURL2" class="control-labe">رابط الصورة 2</label>
+                            <input asp-for="PhotoURL2" class="form-control" />
+                            <span asp-validation-for="PhotoURL2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhotoURL3" class="control-labe">رابط الصورة 3</label>
+                            <input asp-for="PhotoURL3" class="form-control" />
+                            <span asp-validation-for="PhotoURL3" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="col-md-4 offset-4 text-center">
-                        <img width="100%" id="ImageURLPreview2" />
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Sex" class="control-labe">الجنس</label>
+                            <input asp-for="Sex" class="form-control" />
+                            <span asp-validation-for="Sex" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="price" class="control-labe">السعر بالفرنك سيفا </label>
+                            <input asp-for="price" class="form-control" />
+                            <span asp-validation-for="price" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-4 offset-4 text-center">
+                            <img width="100%" id="ImageURLPreview1" />
+                        </div>
                     </div>
-                    <div class="col-md-4 offset-4 text-center">
-                        <img width="100%" id="ImageURLPreview3" />
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-labe"></label>
+                            <textarea asp-for="Description" class="form-control"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
                     </div>
+                </div>
+                <div class="col-md-4 offset-4 text-center">
+                    <img width="100%" id="ImageURLPreview2" />
+                </div>
+                <div class="col-md-4 offset-4 text-center">
+                    <img width="100%" id="ImageURLPreview3" />
+                </div>
                 <form asp-action="Delete">
                     <div class="form-group">
                         <input type="submit" value="حذف" class="btn btn-outline-danger float-right" />

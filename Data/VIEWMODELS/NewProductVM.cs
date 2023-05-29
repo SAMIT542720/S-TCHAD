@@ -10,6 +10,7 @@ namespace S_TCHAD.Data.VIEWMODELS
         public string? PhotoURL1 { get; set; }
         public string? PhotoURL2 { get; set; }
         public string? PhotoURL3 { get; set; }
+        public double price { get; set; }
         public string? Description { get; set; }
         public string? Sex { get; set; }
     }

@@ -21,6 +21,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -79,6 +80,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -97,6 +99,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -115,6 +118,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -133,6 +137,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -151,6 +156,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -169,6 +175,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -187,6 +194,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -205,6 +213,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -223,6 +232,7 @@ namespace S_TCHAD.Migrations
                     PhotoURL1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoURL3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },

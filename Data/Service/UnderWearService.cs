@@ -24,6 +24,7 @@ namespace S_TCHAD.Data.Service
                 dbmovie.PhotoURL3 = data.PhotoURL3;
                 dbmovie.Description = data.Description;
                 dbmovie.Sex = data.Sex;
+                dbmovie.price = data.price;
                 await _context.SaveChangesAsync();
             }
         }

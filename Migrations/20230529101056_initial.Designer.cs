@@ -12,7 +12,7 @@ using S_TCHAD.Data;
 namespace S_TCHAD.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230526171507_initial")]
+    [Migration("20230529101056_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -184,6 +184,9 @@ namespace S_TCHAD.Migrations
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("price")
+                        .HasColumnType("float");
+
                     b.HasKey("ID");
 
                     b.ToTable("ACCESSORIES");
@@ -283,6 +286,9 @@ namespace S_TCHAD.Migrations
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("price")
+                        .HasColumnType("float");
+
                     b.HasKey("ID");
 
                     b.ToTable("Backses");
@@ -313,6 +319,9 @@ namespace S_TCHAD.Migrations
 
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("price")
+                        .HasColumnType("float");
 
                     b.HasKey("ID");
 
@@ -345,6 +354,9 @@ namespace S_TCHAD.Migrations
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("price")
+                        .HasColumnType("float");
+
                     b.HasKey("ID");
 
                     b.ToTable("Giftses");
@@ -375,6 +387,9 @@ namespace S_TCHAD.Migrations
 
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("price")
+                        .HasColumnType("float");
 
                     b.HasKey("ID");
 
@@ -407,6 +422,9 @@ namespace S_TCHAD.Migrations
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("price")
+                        .HasColumnType("float");
+
                     b.HasKey("ID");
 
                     b.ToTable("HomeAccessorieses");
@@ -437,6 +455,9 @@ namespace S_TCHAD.Migrations
 
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("price")
+                        .HasColumnType("float");
 
                     b.HasKey("ID");
 
@@ -469,6 +490,9 @@ namespace S_TCHAD.Migrations
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("price")
+                        .HasColumnType("float");
+
                     b.HasKey("ID");
 
                     b.ToTable("TIRAHS");
@@ -500,6 +524,9 @@ namespace S_TCHAD.Migrations
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("price")
+                        .HasColumnType("float");
+
                     b.HasKey("ID");
 
                     b.ToTable("UnderWears");
@@ -530,6 +557,9 @@ namespace S_TCHAD.Migrations
 
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("price")
+                        .HasColumnType("float");
 
                     b.HasKey("ID");
 
