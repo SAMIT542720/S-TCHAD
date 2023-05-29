@@ -57,6 +57,7 @@
                                     <a class="dropdown-item text-black" asp-controller="AppUser" asp-action="Users"><i class="bi bi-list"></i>المستخدمون</a>
                                 </li>
                             }
+                            <a asp-controller="Home" asp-action="Privacy" class="dropdown-item text-center text-primary">حول هذه الصفحة</a>
                             @*logout button*@
                             <form asp-controller="AppUser" asp-action="Logout" class="d-flex justify-content-center">
                                 <button class="btn btn-outline-danger my-2 my-sm-0 pull-center"><i class="bi bi-box-arrow-in-right"></i>تسجيل الخروج</button>
@@ -74,9 +75,7 @@
         </main>
     </div>
     @*<footer class="border-top footer text-muted">
-        <div class="container">
-            <p>This site was bulid by <h3 class="text-black font-weight-bold">Samit For Technology (Samit For Tech)</h3> for more information blease contuct us by  WhatsApp<a href="https://wa.me/qr/XWBT2JRVI7L5H1"><i class="bi bi-whatsapp"></i></a> <h6>or:</h6> Turkey: +90 542 739 70 87 Moov Africa: 99 60 16 62 Airtail: 66 54 44 90 </p>
-        </div>
+       
     </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
