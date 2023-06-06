@@ -21,7 +21,6 @@
                                     @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
                                     {
                                         <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.ID"><i class="bi bi-pencil-square"></i></a>
-                                        <br>
                                         <a class="text-white float-right" asp-action="Delete" asp-route-id="@item.ID"><i class="bi bi-trash"></i></a>
                                     }
                                 </h5>
@@ -60,7 +59,7 @@
                         <div class="card-body">
                             <p class="card-text text-right">@item.Description</p>
                             <p class="card-text text-right"><b>@item.Sex</b></p>
-                            <p class="card-text text-right"><b> السعر: @item.price</b></p>
+                            <p class="card-text text-right"><b> السعر: </b></p>
                             <p class="card-text text-right">Francs CFA(XAF)</p>
                             <p class="card-text text-right">@((item.price / 5).ToString()) ريال</p>
                             <div class="text-right">
