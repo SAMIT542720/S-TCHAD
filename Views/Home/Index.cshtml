@@ -1,24 +1,97 @@
 ﻿@{
     ViewData["Title"] = "الصفحة الرئيسية";
 }
-<div class="bg-image mr-0 ml-0"
-     style="background-image: url('https://scontent.fndj2-1.fna.fbcdn.net/v/t39.30808-6/318787784_589831439811650_8888004995010711837_n.jpg?stp=dst-jpg_p600x600&_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_ohc=Vw7vk1m3iuMAX-xhTwB&_nc_ht=scontent.fndj2-1.fna&oh=00_AfCexpOr9fdhpUxFSJZzPKcenAyEU4s7VCG7RVT3W2UWUA&oe=64755B21');
-           height: 630px; width:1500px">
-    <h1 class="text-center text-success font-weight-bold mt-4 bg-light" style="height: 48px; width: 540px; margin-left:250px;">
-        Marché du Tchad  سوق تشاد
-    </h1>
-    <div class="" style="margin-top:210px;">
-        <img src="https://scontent.fndj2-1.fna.fbcdn.net/v/t39.30808-6/321326614_692133159172645_3221506316745071017_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=V6lBB9HNYWMAX8JzS5q&_nc_ht=scontent.fndj2-1.fna&oh=00_AfBjyWjRunjydO7jwyCShIksXjlcaoVeBFeq4ReEbtfyyw&oe=647525AF" alt="" style="height:200px ; width: 180px;" class="rounded-circle shadow-4-strong">
-        <div style="margin-left:35px;">
-            <h2>مرحبًا بكم في متجرنا حيث يمكنكم العثور على أفضل الأسعار والمنتجات </h2>
-            <h6 style="margin-left: 800px;">:تابعونا على</h6>
-            <p style="margin-left: 400px;">
-                <a style="margin-right:10px;" href="https://www.facebook.com/SouqTcad"><i class="bi bi-facebook"></i>Facebook </a>
-                <a style="margin-right:10px;" href=""><i class="bi bi-instagram"></i>Instagram</a>
-                <a style="margin-right:10px;" href=""><i class="bi bi-messenger"></i>Messenger</a>
-                <a style="margin-right:10px;" href=""><i class="bi bi-whatsapp"></i>WhatsApp</a>
-            </p>
+<!-- Carousel Start -->
+<div class="container-fluid mb-3">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-carousel" data-slide-to="1"></li>
+                    <li data-target="#header-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item position-relative active" style="height: 430px;">
+                        <img class="position-absolute w-100 h-100" src="https://media.cnn.com/api/v1/images/stellar/prod/230314143657-underscored-buck-mason.jpg?c=original" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">أزياء رجالية </h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">أفضل الأزياء وأفضل الأسعار هو شعارنا </p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">تسوق الآن</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item position-relative" style="height: 430px;">
+                        <img class="position-absolute w-100 h-100" src="https://media.istockphoto.com/id/1053814860/photo/islamic-women-friends-shopping-together-on-the-weekend.jpg?s=612x612&w=0&k=20&c=BKAfMqXA_ryaN34AJzxZIkMZdf7oRHxcIoQRDqfienw=" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">أزياء نسائية</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">أفضل الأزياء وأفضل الأسعار هو شعارنا </p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">تسوق الآن</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item position-relative" style="height: 430px;">
+                        <img class="position-absolute w-100 h-100" src="https://images.unsplash.com/photo-1611428813653-aa606c998586?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2lkcyUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D&w=1000&q=80" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">أزياءأطفال</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">أفضل الأزياء وأفضل الأسعار هو شعارنا </p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">تسوق الآن</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="product-offer mb-30" style="height: 200px;">
+                <img class="img-fluid" src="https://www.apetogentleman.com/wp-content/uploads/2022/05/FALL-WINTER-TRENDS.jpg" alt="">
+                <div class="offer-text">
+                    <h6 class="text-white text-uppercase"></h6>
+                    <h3 class="text-white mb-3">عروض خاصة</h3>
+                    <a href="" class="btn btn-primary">تسوق الآن</a>
+                </div>
+            </div>
+            <div class="product-offer mb-30" style="height: 200px;">
+                <img class="img-fluid" src="https://scontent.fyei6-4.fna.fbcdn.net/v/t39.30808-6/350136786_1463420707760026_1792236761606200659_n.jpg?stp=dst-jpg_p960x960&_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=8Od3fBZF-tkAX9cURpQ&_nc_ht=scontent.fyei6-4.fna&oh=00_AfCWaBGLZJw0GCfzLjzrOa_nGOSgq9LUauflIBM2Zx2xbQ&oe=64A37658" alt="">
+                <div class="offer-text">
+                    <h6 class="text-white text-uppercase"></h6>
+                    <h3 class="text-white mb-3">عروض خاصة</h3>
+                    <a href="" class="btn btn-primary">تسوق الآن</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
+<!-- Carousel End -->
+<!-- Featured Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5 pb-3">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">منتجات ذات جودة عالية</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                <h5 class="font-weight-semi-bold m-0">شحن سريع</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0"> اعادة المنتج بعد 3 ايام</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">استفسار على مدار الساعة</h5>
+            </div>
+        </div>
+    </div>
+</div>
