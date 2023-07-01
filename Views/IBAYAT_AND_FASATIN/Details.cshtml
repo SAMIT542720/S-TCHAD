@@ -10,13 +10,11 @@
         <div class="col-lg-7 h-auto mb-30 text-right">
             <div class="h-100 bg-light p-30">
                 <h3>@Model.Name</h3>
-
                 <h4 class="font-weight-semi-bold mb-4"> Francs CFA(XAF) @Model.price : السعر</h4>
                 <h4 class="font-weight-semi-bold mb-4"> @((Model.price / 5).ToString()) ريال </h4>
                 <p class="mb-4">
                     @Model.Description
                 </p>
-               
                 <div>
                     <p class="text-left"><h3>للطلب والاستفسار </h3></p>
                     <a class="btn btn-primary text-white">
@@ -29,6 +27,11 @@
                         +235 66 65 05 39 <i class="bi bi-telephone-fill "></i>
                     </a>
                 </div>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                {
+                    <a class="btn btn-outline-dark btn-square" asp-action="Edit" asp-route-id="@Model.ID"><i class="bi bi-pencil-square"></i></a>
+                    <a class="btn btn-outline-dark btn-square" asp-action="Delete" asp-route-id="@Model.ID"><i class="bi bi-trash"></i></a>
+                }
                 <div class="d-flex pt-2 float-right ">
                     <div class="d-inline-flex">
                         <a class="text-dark px-2" href="https://www.facebook.com/SouqTcad">
