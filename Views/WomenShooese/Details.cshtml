@@ -4,87 +4,73 @@
 @{
     ViewData["Title"] = "قائمة العبايات الفساتين";
 }
-<h2 class="text-center font-wight-bold">تفاصيل المنتج </h2>
-<div class="row">
-
-    <div class="col-md-8 offset-2">
-        <div class="card mb-12">
-            <div class="row g-0">
-                <div class="col-md-12">
-                    <div class="card-header text-white bg-success">
-                        <p class="card-text">
-                            <h5 class="card-title">
-                                @Model.Name
-                                @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
-                                {
-                                    <a class="text-white float-right" asp-action="Edit" asp-route-id="@Model.ID"><i class="bi bi-pencil-square"></i></a>
-                                    <br>
-                                    <a class="text-white float-right" asp-action="Delete" asp-route-id="@Model.ID"><i class="bi bi-trash"></i></a>
-                                }
-                            </h5>
-                        </p>
-                    </div>
+<link rel="stylesheet" href="~/css/style.css" />
+<div class="container-fluid pb-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-7 h-auto mb-30 text-right">
+            <div class="h-100 bg-light p-30">
+                <h3>@Model.Name</h3>
+                <h4 class="font-weight-semi-bold mb-4"> Francs CFA(XAF) @Model.price : السعر</h4>
+                <h4 class="font-weight-semi-bold mb-4"> @((Model.price / 5).ToString()) ريال </h4>
+                <p class="mb-4">
+                    @Model.Description
+                </p>
+                <div>
+                    <p class="text-left"><h3>للطلب والاستفسار </h3></p>
+                    <a class="btn btn-primary text-white">
+                        Messenger <i class="bi bi-messenger "></i>
+                    </a>
+                    <a class="btn btn-success text-white " href="https://wa.me/message/NSHVVF3MAPVNO1">
+                        WhatsApp<i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a class="btn btn-primary text-white">
+                        +235 66 65 05 39 <i class="bi bi-telephone-fill "></i>
+                    </a>
                 </div>
-                <div class="col-md-4">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="@Model.PhotoURL1">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="@Model.PhotoURL2">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="@Model.PhotoURL3">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">السابق</span>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                {
+                    <a class="btn btn-outline-dark btn-square" asp-action="Edit" asp-route-id="@Model.ID"><i class="bi bi-pencil-square"></i></a>
+                    <a class="btn btn-outline-dark btn-square" asp-action="Delete" asp-route-id="@Model.ID"><i class="bi bi-trash"></i></a>
+                }
+                <div class="d-flex pt-2 float-right ">
+                    <div class="d-inline-flex">
+                        <a class="text-dark px-2" href="https://www.facebook.com/SouqTcad">
+                            <i class="bi bi-facebook"></i>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">التالي</span>
+                        <a class="text-dark px-2" href="">
+                            <i class="bi bi-instagram"></i>
                         </a>
+                        @*<a class="text-dark px-2" href="">
+                        <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a class="text-dark px-2" href="">
+                        <i class="bi bi-pinterest"></i>
+                        </a>*@
+                    </div>
+                    <strong class="text-dark mr-2">تابعونا على</strong>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 mb-30">
+            <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner bg-light">
+                    <div class="carousel-item active">
+                        <img class="w-100 h-100" src="@Model.PhotoURL1" alt="Image">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 h-100" src="@Model.PhotoURL2" alt="Image">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 h-100" src="@Model.PhotoURL3" alt="Image">
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <p class="card-text text-right">@Model.Description</p>
-                        <p class="card-text text-right">@Model.Sex</p>
-                        <p class="card-text text-right"><b> السعر: @Model.price</b></p>
-                        <p class="card-text text-right">Francs CFA(XAF)</p>
-                        <p class="card-text text-right">@((Model.price / 5).ToString()) ريال</p>
-                        <div class="text-right">
-                            <p class="card-text text-right"><h3>للطلب والاستفسار </h3></p>
-                            <a class="btn btn-primary text-white">
-                                <i class="bi bi-messenger"></i>Messenger
-                            </a>
-                            <a class="btn btn-success text-white " href="https://wa.me/message/NSHVVF3MAPVNO1">
-                                WhatsApp<i class="bi bi-whatsapp"></i>
-                            </a>
-                            <a class="btn btn-primary text-white">
-                                <i class="bi bi-telephone-fill"></i>66 65 05 39
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="card-footer ">
-                        <p class="card-text">
-                            <a class="btn btn-outline-secondary" asp-controller="WomenShooese" asp-action="Index">
-                                <i class="bi bi-box-arrow-left"></i>الرجوع الي القائمة
-                            </a>
-                        </p>
-                    </div>
-                </div>
+                <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
+                    <i class="fa fa-2x fa-angle-left text-dark"></i>
+                </a>
+                <a class="carousel-control-next" href="#product-carousel" data-slide="next">
+                    <i class="fa fa-2x fa-angle-right text-dark"></i>
+                </a>
             </div>
         </div>
     </div>
 </div>
-

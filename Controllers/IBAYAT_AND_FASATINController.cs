@@ -82,24 +82,16 @@ namespace S_TCHAD.Controllers
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
-        // [HttpGet]
-        //public async Task<IActionResult> WhatsAppMessage(int id)
+        //serach for a product
+        //public async Task<IActionResult> Filter(string searchString)
         //{
-        //    // Retrieve the product details by ID from the database or any other source
-        //    var product = _service.GetByIdAsync(id); // Replace this with your logic to get the product details
-
-        //    if (product != null)
+        //    var allMOVIES = await _service.GetAllAsync();
+        //    if (!string.IsNullOrEmpty(searchString))
         //    {
-        //        var whatsappNumber = "+235 66 65 05 39"; // Replace with your actual WhatsApp number
-        //        var message = $"Product Name: {product.Name}%0AProduct Description: {product.Description}"; // URL encoded message
-
-        //        var whatsappUrl = $"https://wa.me/{whatsappNumber}?text={message}";
-        //        return Redirect(whatsappUrl);
+        //        var filteredresult = allMOVIES.Where(n => n.Name.Contains(searchString)).ToList();
+        //        return View("Index", filteredresult);
         //    }
-
-        //    // Handle case where product is not found
-        //    return NotFound();
+        //    return View("Index", allMOVIES);
         //}
-
     }
 }
