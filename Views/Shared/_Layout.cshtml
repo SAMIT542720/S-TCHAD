@@ -70,13 +70,13 @@
                                 <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                         </div>
-                       @* language selection*@
+                        @* language selection*@
                         @*<div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">FR</button>
-                                <button class="dropdown-item" type="button">AR</button>
-                            </div>
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button">FR</button>
+                        <button class="dropdown-item" type="button">AR</button>
+                        </div>
                         </div>*@
                         @if (!User.Identity.IsAuthenticated)
                         {
@@ -104,7 +104,7 @@
                                             <a class="dropdown-item text-black" asp-controller="AppUser" asp-action="Users"><i class="bi bi-list"></i>المستخدمون</a>
                                         </li>
                                     }
-                                   @* <a asp-controller="Home" asp-action="Privacy" class="dropdown-item text-center text-primary">حول هذه الصفحة</a>*@
+                                    @* <a asp-controller="Home" asp-action="Privacy" class="dropdown-item text-center text-primary">حول هذه الصفحة</a>*@
                                     @*logout button*@
                                     <form asp-controller="AppUser" asp-action="Logout" class="d-flex justify-content-center">
                                         <button class="btn btn-outline-danger my-2 my-sm-0 pull-center"><i class="bi bi-box-arrow-in-right"></i>تسجيل الخروج</button>
@@ -122,35 +122,35 @@
                     </div>
                 </div>
             </div>
-            <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-                <div class="col-lg-4">
-                    <a href="" class="text-decoration-none">
-                        <span class="h1 text-uppercase text-primary bg-dark px-2">Marche Du Tchad</span>
-                        <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">سوق تشاد</span>
-                    </a>
+                <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+                    <div class="col-lg-4">
+                        <a href="" class="text-decoration-none">
+                        <a class="h1 text-uppercase text-primary bg-dark px-2" asp-controller="Home" asp-action="Index">Marche Du Tchad</a>
+                        <a class="h1 text-uppercase text-dark bg-primary px-2 ml-n1" asp-controller="Home" asp-action="Index">سوق تشاد</a>
+                        </a>
+                    </div>
+            <div class="col-lg-4 col-6 text-left">
+                @* serch for a product
+                <form asp-controller="@Model" asp-action="Filter">
+                <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for products">
+                <div class="input-group-append">
+                <span class="input-group-text bg-transparent text-primary">
+                <i class="fa fa-search"></i>
+                </span>
                 </div>
-                <div class="col-lg-4 col-6 text-left">
-                   @* serch for a product
-                    <form asp-controller="@Model" asp-action="Filter">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for products">
-                            <div class="input-group-append">
-                                <span class="input-group-text bg-transparent text-primary">
-                                    <i class="fa fa-search"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </form>*@
                 </div>
-                <div class="col-lg-4 col-6 text-right">
-                    <p class="m-0"><h5>للطلب والاستفسار </h5></p>
-                    <a class="text-dark px-2" href="https://wa.me/message/NSHVVF3MAPVNO1">
-                        <i class="bi bi-whatsapp"></i>
-                    </a>
-                    <h5 class="m-0">+235 66 65 05 39</h5>
-                    <h5 class="m-0"></h5>
-                </div>
+                </form>*@
             </div>
+            <div class="col-lg-4 col-6 text-right">
+                <p class="m-0"><h5>للطلب والاستفسار </h5></p>
+                <a class="text-dark px-2" href="https://wa.me/message/NSHVVF3MAPVNO1">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+                <h5 class="m-0">+235 66 65 05 39</h5>
+                <h5 class="m-0"></h5>
+            </div>
+        </div>
         </div>
         <!-- Topbar End -->
         <!-- Navbar Start -->
@@ -168,7 +168,7 @@
                                 <div class="dropdown-menu position-absolute rounded-0 border-0 m-0 dropdown-menu-start">
                                     <a class="dropdown-item" asp-controller="MAN" asp-action="Index">ملابس رجالية</a>
                                     <a class="dropdown-item" asp-controller="IBAYAT_AND_FASATIN" asp-action="Index">ملابس نسائية</a>
-                                    <a  class="dropdown-item" asp-controller="CHILD" asp-action="Index">ملابس اطفال</a>
+                                    <a class="dropdown-item" asp-controller="CHILD" asp-action="Index">ملابس اطفال</a>
                                 </div>
                             </div>
                             <a class="nav-item nav-link" asp-controller="ACCESSORIE" asp-action="Index">إكسسوارات</a>
