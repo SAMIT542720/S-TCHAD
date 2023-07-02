@@ -20,6 +20,8 @@ builder.Services.AddScoped<IHomeAccessoriesService, HomeAccessoriesService>();
 builder.Services.AddScoped<ITIRAHSERVICE, TIRAHSERVICE>();
 builder.Services.AddScoped<IUnderWearService, UnderWearService>();
 builder.Services.AddScoped<IWomenShooeseService, WomenShooeseService>();
+builder.Services.AddScoped<IMANSERVICES, MANSERVICE>();
+builder.Services.AddScoped<ICHILDSERVICE, CHILDESERVICE>();
 //Authentication and Authorization
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddMemoryCache();

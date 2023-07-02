@@ -20,5 +20,7 @@ namespace S_TCHAD.Data
         public DbSet<ACCESSORIE> ACCESSORIES { get; set; }
         public DbSet<BeautyProduct> BeautyProducts { get; set; }
         public DbSet<IBAYAT_AND_FASATIN> IBAYAT_AND_FASATINS { get; set; }
+        public DbSet<CHILD> CHILDS { get; set; }
+        public DbSet<MAN> MANS { get; set; }
     }
 }
