@@ -5,7 +5,7 @@ using S_TCHAD.Models;
 
 namespace S_TCHAD.Data.Service
 {
-    public class MANSERVICE : EntityBaseRepository<ACCESSORIE>, IMANSERVICES
+    public class MANSERVICE : EntityBaseRepository<MAN>, IMANSERVICES
     {
         private readonly AppDbContext _context;
         public MANSERVICE(AppDbContext context) : base(context)

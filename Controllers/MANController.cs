@@ -37,7 +37,7 @@ namespace S_TCHAD.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Name, PhotoURL1,PhotoURL2,PhotoURL3,Description,Sex")] ACCESSORIE abaya)
+        public async Task<IActionResult> Create([Bind("Name, PhotoURL1,PhotoURL2,PhotoURL3,Description,Sex")] MAN abaya)
         {
             if (!ModelState.IsValid)
             {

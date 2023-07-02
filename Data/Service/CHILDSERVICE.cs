@@ -2,13 +2,14 @@
 using S_TCHAD.Data.Base;
 using S_TCHAD.Data.VIEWMODELS;
 using S_TCHAD.Models;
+using System.Linq.Expressions;
 
 namespace S_TCHAD.Data.Service
 {
-    public class CHILDESERVICE : EntityBaseRepository<ACCESSORIE>, ICHILDSERVICE
+    public class CHILDSERVICE : EntityBaseRepository<CHILD>, ICHILDSERVICE
     {
         private readonly AppDbContext _context;
-        public CHILDESERVICE(AppDbContext context) : base(context)
+        public CHILDSERVICE(AppDbContext context) : base(context)
         {
             _context = context;
         }

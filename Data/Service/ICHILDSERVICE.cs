@@ -4,7 +4,7 @@ using S_TCHAD.Models;
 
 namespace S_TCHAD.Data.Service
 {
-    public interface ICHILDSERVICE : IEntityBaseReprository<ACCESSORIE>
+    public interface ICHILDSERVICE : IEntityBaseReprository<CHILD>
     {
         Task UpdateProductAsync(NewProductVM data);
     }
