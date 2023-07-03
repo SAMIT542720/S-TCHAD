@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using S_TCHAD.Data.Service;
 using S_TCHAD.Data.Static;
 using S_TCHAD.Data.VIEWMODELS;
