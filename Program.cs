@@ -22,7 +22,6 @@ builder.Services.AddScoped<IUnderWearService, UnderWearService>();
 builder.Services.AddScoped<IWomenShooeseService, WomenShooeseService>();
 builder.Services.AddScoped<IMANSERVICES, MANSERVICE>();
 builder.Services.AddScoped<ICHILDSERVICE, CHILDSERVICE>();
-builder.Services.AddScoped<IAppUserService, AppUserService>();
 //Authentication and Authorization
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddMemoryCache();

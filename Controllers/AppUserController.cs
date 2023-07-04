@@ -14,13 +14,12 @@ namespace S_TCHAD.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly AppDbContext _context;
-        private readonly IAppUserService _appuserservice;
-        public AppUserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, AppDbContext context, IAppUserService appuserservice)
+        
+        public AppUserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, AppDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
-            _appuserservice = appuserservice;
         }
         public IActionResult Index()
         {
@@ -96,18 +95,19 @@ namespace S_TCHAD.Controllers
 
             return View("RegisterCompleted");
         }
-
-        // GET: /Profile/Preview
-        public async Task<IActionResult> Preview(int id)
+        public async Task<IActionResult> UserProfile(string userId)
         {
-            AppUser appusers = await _appuserservice.GetUserByIdAsync(id);
+            var appuser = await _userManager.FindByIdAsync(userId);
 
-            if (appusers == null)
+            if (appuser == null)
             {
+                // User not found, insert witty Stark Industries error message here
                 return View("Not Found");
             }
 
-            return View(Preview);
+            // Map the ApplicationUser to a ViewModel if necessary
+            // For simplicity, we'll just pass the user to the view
+            return View(appuser);
         }
     }
 }
