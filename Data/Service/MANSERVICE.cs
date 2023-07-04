@@ -14,7 +14,7 @@ namespace S_TCHAD.Data.Service
         }
         public async Task UpdateProductAsync(NewProductVM data)
         {
-            var dbmovie = await _context.ACCESSORIES.FirstOrDefaultAsync(n => n.ID == data.ID);
+            var dbmovie = await _context.MANS.FirstOrDefaultAsync(n => n.ID == data.ID);
             if (dbmovie != null)
             {
 

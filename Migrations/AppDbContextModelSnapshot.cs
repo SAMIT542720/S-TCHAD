@@ -193,7 +193,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("ACCESSORIES");
+                    b.ToTable("ACCESSORIES", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.AppUser", b =>
@@ -302,7 +302,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Backses");
+                    b.ToTable("Backses", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.BeautyProduct", b =>
@@ -343,7 +343,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("BeautyProducts");
+                    b.ToTable("BeautyProducts", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.CHILD", b =>
@@ -384,7 +384,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("CHILDS");
+                    b.ToTable("CHILDS", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.Gifts", b =>
@@ -425,7 +425,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Giftses");
+                    b.ToTable("Giftses", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.HairCream", b =>
@@ -466,7 +466,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("HairCreams");
+                    b.ToTable("HairCreams", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.HomeAccessories", b =>
@@ -507,7 +507,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("HomeAccessorieses");
+                    b.ToTable("HomeAccessorieses", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.IBAYAT_AND_FASATIN", b =>
@@ -548,7 +548,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("IBAYAT_AND_FASATINS");
+                    b.ToTable("IBAYAT_AND_FASATINS", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.MAN", b =>
@@ -589,7 +589,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("MANS");
+                    b.ToTable("MANS", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.TIRAH", b =>
@@ -630,7 +630,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("TIRAHS");
+                    b.ToTable("TIRAHS", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.UnderWear", b =>
@@ -671,7 +671,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("UnderWears");
+                    b.ToTable("UnderWears", (string)null);
                 });
 
             modelBuilder.Entity("S_TCHAD.Models.WomenShooese", b =>
@@ -712,7 +712,7 @@ namespace S_TCHAD.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("WomenShooeses");
+                    b.ToTable("WomenShooeses", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

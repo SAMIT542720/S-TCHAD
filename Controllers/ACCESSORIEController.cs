@@ -51,7 +51,7 @@ namespace S_TCHAD.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
-            if (actorDetails == null) return View("NotFound");
+            if (actorDetails == null) return View("Not Found");
             return View(actorDetails);
         }
         [HttpPost]

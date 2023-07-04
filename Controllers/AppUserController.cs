@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using S_TCHAD.Data;
+using S_TCHAD.Data.Service;
 using S_TCHAD.Data.Static;
 using S_TCHAD.Data.VIEWMODELS;
 using S_TCHAD.Models;
@@ -13,11 +14,13 @@ namespace S_TCHAD.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly AppDbContext _context;
-        public AppUserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, AppDbContext context)
+        private readonly IAppUserService _appuserservice;
+        public AppUserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, AppDbContext context, IAppUserService appuserservice)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
+            _appuserservice = appuserservice;
         }
         public IActionResult Index()
         {
@@ -92,6 +95,19 @@ namespace S_TCHAD.Controllers
                 await _userManager.AddToRoleAsync(newUser, UserRoles.User);
 
             return View("RegisterCompleted");
+        }
+
+        // GET: /Profile/Preview
+        public async Task<IActionResult> Preview(int id)
+        {
+            AppUser appusers = await _appuserservice.GetUserByIdAsync(id);
+
+            if (appusers == null)
+            {
+                return View("Not Found");
+            }
+
+            return View(Preview);
         }
     }
 }
