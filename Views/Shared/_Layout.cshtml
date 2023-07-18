@@ -95,7 +95,7 @@
                                     <i class="bi bi-person-badge"></i>@UserManager.GetUserName(User) مرحبًا
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="Profile-btn">
-                                  @*  <a class="dropdown-item text-success" asp-controller="AppUser" asp-action="UserProfile"><i class="fas fa-user"></i>الملف الشخصي</a>*@
+                                    @*  <a class="dropdown-item text-success" asp-controller="AppUser" asp-action="UserProfile"><i class="fas fa-user"></i>الملف الشخصي</a>*@
                                     @*<li>
                                 <a class="dropdown-item" asp-controller="Orders" asp-action="Index"><i class="bi bi-list"></i>Orders</a>
                                 </li>*@
@@ -123,35 +123,35 @@
                     </div>
                 </div>
             </div>
-                <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-                    <div class="col-lg-4">
-                        <a href="" class="text-decoration-none">
+            <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+                <div class="col-lg-4">
+                    <a href="" class="text-decoration-none">
                         <a class="h1 text-uppercase text-primary bg-dark px-2" asp-controller="Home" asp-action="Index">Marche Du Tchad</a>
                         <a class="h1 text-uppercase text-dark bg-primary px-2 ml-n1" asp-controller="Home" asp-action="Index">سوق تشاد</a>
-                        </a>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-6 text-left">
+                    @* serch for a product
+                    <form asp-controller="@Model" asp-action="Filter">
+                    <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for products">
+                    <div class="input-group-append">
+                    <span class="input-group-text bg-transparent text-primary">
+                    <i class="fa fa-search"></i>
+                    </span>
                     </div>
-            <div class="col-lg-4 col-6 text-left">
-                @* serch for a product
-                <form asp-controller="@Model" asp-action="Filter">
-                <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for products">
-                <div class="input-group-append">
-                <span class="input-group-text bg-transparent text-primary">
-                <i class="fa fa-search"></i>
-                </span>
+                    </div>
+                    </form>*@
                 </div>
+                <div class="col-lg-4 col-6 text-right">
+                    <p class="m-0"><h5>للطلب والاستفسار </h5></p>
+                    <a class="text-dark px-2" href="https://wa.me/message/NSHVVF3MAPVNO1">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <h5 class="m-0">+235 66 65 05 39</h5>
+                    <h5 class="m-0"></h5>
                 </div>
-                </form>*@
             </div>
-            <div class="col-lg-4 col-6 text-right">
-                <p class="m-0"><h5>للطلب والاستفسار </h5></p>
-                <a class="text-dark px-2" href="https://wa.me/message/NSHVVF3MAPVNO1">
-                    <i class="bi bi-whatsapp"></i>
-                </a>
-                <h5 class="m-0">+235 66 65 05 39</h5>
-                <h5 class="m-0"></h5>
-            </div>
-        </div>
         </div>
         <!-- Topbar End -->
         <!-- Navbar Start -->
